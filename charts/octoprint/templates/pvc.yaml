@@ -1,0 +1,28 @@
+{{- if and .Values.pvc.enabled (not .Values.pvc.existingClaim) }}
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: {{ .Values.pvc.name | default (include "octoprint.pvcname" .) }}
+{{- with .Values.pvc.annotations }}
+  annotations:
+    {{- toYaml . | nindent 4 }}
+{{- end }}
+  labels:
+    {{- include "octoprint.labels" . | nindent 4 }}
+spec:
+{{- if .Values.pvc.accessModes }}
+  accessModes:
+    {{- toYaml .Values.pvc.accessModes | nindent 4 }}
+{{- end }}
+{{- if .Values.pvc.storageClassName }}
+  storageClassName: "{{ .Values.pvc.storageClassName }}"
+{{- else }}
+  storageClassName: ""
+{{- end }}
+{{- if .Values.pvc.volumeBindingMode }}
+  volumeBindingModeName: "{{ .Values.pvc.volumeBindingMode }}"
+{{- end }}
+  resources:
+    requests:
+      storage: "{{ .Values.pvc.size }}"
+{{- end }}
