@@ -3,6 +3,23 @@ entries:
   chinese-discord-bot:
   - apiVersion: v2
     appVersion: 1.1.1
+    created: "2021-10-08T07:15:51.679399297Z"
+    description: A Helm chart for Chinese Discord Bot
+    digest: 958320366db41fa19aa92691d929c114afec34c80229ad84d340dcab1fa8b842
+    maintainers:
+    - email: louis@giacinti.com
+      name: Louis Giacinti
+    - email: philippe@giacinti.com
+      name: Philippe Giacinti
+    name: chinese-discord-bot
+    sources:
+    - https://github.com/louisgiac/chinese-discord-bot
+    type: application
+    urls:
+    - https://github.com/giacinti/helm-charts/releases/download/chinese-discord-bot-0.1.1/chinese-discord-bot-0.1.1.tgz
+    version: 0.1.1
+  - apiVersion: v2
+    appVersion: 1.1.1
     created: "2021-10-08T05:18:58.83981295Z"
     description: A Helm chart for Chinese Discord Bot
     digest: f7b21e80b1344d6188115018884fd5c691e2f70964fc7efb72dfd826e197b459
@@ -12,6 +29,21 @@ entries:
     type: application
     urls:
     - https://github.com/giacinti/helm-charts/releases/download/chinese-discord-bot-0.1.0/chinese-discord-bot-0.1.0.tgz
+    version: 0.1.0
+  grisbi-client:
+  - apiVersion: v2
+    appVersion: v1
+    created: "2021-10-08T07:15:51.855308197Z"
+    description: A Helm chart for grisbi client
+    digest: a09434be09c64f578125db050f7d7f532309a1b4e4bcabb2184e5abb59f65dc5
+    icon: https://raw.githubusercontent.com/grisbi/grisbi/master/pixmaps/grisbi.svg
+    maintainers:
+    - email: philippe@giacinti.com
+      name: Philippe Giacinti
+    name: grisbi-client
+    type: application
+    urls:
+    - https://github.com/giacinti/helm-charts/releases/download/grisbi-client-0.1.0/grisbi-client-0.1.0.tgz
     version: 0.1.0
   octoprint:
   - apiVersion: v2
@@ -28,4 +60,4 @@ entries:
     urls:
     - https://github.com/giacinti/helm-charts/releases/download/octoprint-0.1.0/octoprint-0.1.0.tgz
     version: 0.1.0
-generated: "2021-10-08T05:18:58.83982345Z"
+generated: "2021-10-08T07:15:51.855316497Z"
