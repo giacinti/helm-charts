@@ -1,5 +1,18 @@
 apiVersion: v1
 entries:
+  chinese-discord-bot:
+  - apiVersion: v2
+    appVersion: 1.1.1
+    created: "2021-10-08T05:18:58.83981295Z"
+    description: A Helm chart for Chinese Discord Bot
+    digest: f7b21e80b1344d6188115018884fd5c691e2f70964fc7efb72dfd826e197b459
+    name: chinese-discord-bot
+    sources:
+    - https://github.com/louisgiac/chinese-discord-bot
+    type: application
+    urls:
+    - https://github.com/giacinti/helm-charts/releases/download/chinese-discord-bot-0.1.0/chinese-discord-bot-0.1.0.tgz
+    version: 0.1.0
   octoprint:
   - apiVersion: v2
     appVersion: 1.6.1
@@ -15,4 +28,4 @@ entries:
     urls:
     - https://github.com/giacinti/helm-charts/releases/download/octoprint-0.1.0/octoprint-0.1.0.tgz
     version: 0.1.0
-generated: "2021-10-07T19:13:42.021355745Z"
+generated: "2021-10-08T05:18:58.83982345Z"
