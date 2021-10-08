@@ -25,3 +25,9 @@ appVersion: "1.1.1"
 
 sources:
   - https://github.com/louisgiac/chinese-discord-bot
+
+maintainers:
+   - name: Louis Giacinti
+     email: louis@giacinti.com
+   - name: Philippe Giacinti
+     email: philippe@giacinti.com
