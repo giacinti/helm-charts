@@ -1,0 +1,70 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "grisbi-client.fullname" . }}
+  labels:
+    {{- include "grisbi-client.labels" . | nindent 4 }}
+spec:
+  {{- if not .Values.autoscaling.enabled }}
+  replicas: {{ .Values.replicaCount }}
+  {{- end }}
+  selector:
+    matchLabels:
+      {{- include "grisbi-client.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      {{- with .Values.podAnnotations }}
+      annotations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      labels:
+        {{- include "grisbi-client.selectorLabels" . | nindent 8 }}
+    spec:
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      serviceAccountName: {{ include "grisbi-client.serviceAccountName" . }}
+      securityContext:
+        {{- toYaml .Values.podSecurityContext | nindent 8 }}
+      containers:
+        - name: {{ .Chart.Name }}
+          securityContext:
+            {{- toYaml .Values.securityContext | nindent 12 }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          ports:
+            - name: http
+              containerPort: 8080
+              protocol: TCP
+          env:
+            - name: DISPLAY_HEIGHT
+              value: {{ .Values.display.height | default 600 | quote }}
+            - name: DISPLAY_WIDTH
+              value: {{ .Values.display.width | default 1280 | quote }}
+          volumeMounts:
+          - mountPath: /data/compta
+            name: compta
+          - mountPath: /data/backup
+            name: backup
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+      volumes:
+        - name: compta
+          persistentVolumeClaim:
+            claimName: {{ required "A value for grisbi persistent volume claim is required" .Values.volumes.grisbi }}
+        - name: backup
+          persistentVolumeClaim:
+            claimName: {{ required "A value for backup persistent volume claim is required" .Values.volumes.backup }}
+      {{- with .Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
