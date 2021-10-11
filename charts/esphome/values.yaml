@@ -20,6 +20,10 @@ pvc:
     - ReadWriteOnce
   size: 10Gi
 
+# env:
+#   - name: ESPHOME_DASHBOARD_USE_PING
+#     value: true
+
 
 imagePullSecrets: []
 nameOverride: ""
