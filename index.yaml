@@ -30,6 +30,17 @@ entries:
     urls:
     - https://github.com/giacinti/helm-charts/releases/download/chinese-discord-bot-0.1.0/chinese-discord-bot-0.1.0.tgz
     version: 0.1.0
+  esphome:
+  - apiVersion: v2
+    appVersion: latest
+    created: "2021-10-11T07:13:26.955540038Z"
+    description: A Helm chart for esphome
+    digest: b7353a8ba3d26290bb54572debf96c11c02bcf3db67ea150df886fb8fe1a9404
+    name: esphome
+    type: application
+    urls:
+    - https://github.com/giacinti/helm-charts/releases/download/esphome-0.1.0/esphome-0.1.0.tgz
+    version: 0.1.0
   grisbi-client:
   - apiVersion: v2
     appVersion: v1
@@ -60,4 +71,4 @@ entries:
     urls:
     - https://github.com/giacinti/helm-charts/releases/download/octoprint-0.1.0/octoprint-0.1.0.tgz
     version: 0.1.0
-generated: "2021-10-08T07:15:51.855316497Z"
+generated: "2021-10-11T07:13:26.955548536Z"
