@@ -33,6 +33,20 @@ entries:
   esphome:
   - apiVersion: v2
     appVersion: latest
+    created: "2021-10-11T08:21:31.777399562Z"
+    description: A Helm chart for esphome
+    digest: fca5440c47d2dd551f3305e59d74aa28021eccc2951e0367ce0afb3ca27ff4c4
+    icon: https://github.com/esphome/esphome-docs/raw/current/_static/favicon-128x128.png
+    maintainers:
+    - email: philippe@giacinti.com
+      name: Philippe Giacinti
+    name: esphome
+    type: application
+    urls:
+    - https://github.com/giacinti/helm-charts/releases/download/esphome-0.1.1/esphome-0.1.1.tgz
+    version: 0.1.1
+  - apiVersion: v2
+    appVersion: latest
     created: "2021-10-11T07:13:26.955540038Z"
     description: A Helm chart for esphome
     digest: b7353a8ba3d26290bb54572debf96c11c02bcf3db67ea150df886fb8fe1a9404
@@ -71,4 +85,4 @@ entries:
     urls:
     - https://github.com/giacinti/helm-charts/releases/download/octoprint-0.1.0/octoprint-0.1.0.tgz
     version: 0.1.0
-generated: "2021-10-11T07:13:26.955548536Z"
+generated: "2021-10-11T08:21:31.777413162Z"
