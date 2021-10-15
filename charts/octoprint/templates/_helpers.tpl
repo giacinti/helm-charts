@@ -6,6 +6,13 @@ Expand the name of the chart.
 {{- end }}
 
 {{/*
+Application version
+*/}}
+{{- define "octoprint.version" -}}
+{{- default .Chart.AppVersion .Values.versionOverride }}
+{{- end }}
+
+{{/*
 Create a default fully qualified app name.
 We truncate at 63 chars because some Kubernetes name fields are limited to this (by the DNS naming spec).
 If release name contains chart name it will be used as a full name.
@@ -27,7 +34,7 @@ If release name contains chart name it will be used as a full name.
 Create a default base name, removing dots
 */}}
 {{- define "octoprint.basename" -}}
-{{- printf "octoprint-%s-%s" (.Chart.AppVersion | replace "." "-") .Release.Name }}
+{{- printf "octoprint-%s-%s" ((include "octoprint.version" .) | replace "." "-") .Release.Name }}
 {{- end }}
 
 {{/*
@@ -52,7 +59,7 @@ Common labels
 helm.sh/chart: {{ include "octoprint.chart" . }}
 {{ include "octoprint.selectorLabels" . }}
 {{- if .Chart.AppVersion }}
-app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
+app.kubernetes.io/version: {{ (include "octoprint.version" .) | quote }}
 {{- end }}
 app.kubernetes.io/managed-by: {{ .Release.Service }}
 {{- end }}
