@@ -73,6 +73,20 @@ entries:
   octoprint:
   - apiVersion: v2
     appVersion: latest
+    created: "2022-02-22T21:53:01.354822046Z"
+    description: Octoprint helm chart
+    digest: 08fa67959eb8ba459448791cf9539911964b9a37b7b266f8d0a661ef57f0d3c8
+    icon: https://github.com/OctoPrint/OctoPrint/raw/master/docs/images/octoprint-logo.png
+    maintainers:
+    - email: philippe@giacinti.com
+      name: Philippe Giacinti
+    name: octoprint
+    type: application
+    urls:
+    - https://github.com/giacinti/helm-charts/releases/download/octoprint-0.3.0/octoprint-0.3.0.tgz
+    version: 0.3.0
+  - apiVersion: v2
+    appVersion: latest
     created: "2021-10-15T06:40:25.986510532Z"
     description: Octoprint helm chart
     digest: 3b02fd61de9949be4bda511b67d22cfdd92bfadce16bb157f9970552a93c5971
@@ -99,4 +113,4 @@ entries:
     urls:
     - https://github.com/giacinti/helm-charts/releases/download/octoprint-0.1.0/octoprint-0.1.0.tgz
     version: 0.1.0
-generated: "2021-10-15T06:40:25.986533832Z"
+generated: "2022-02-22T21:53:01.354847046Z"
