@@ -46,7 +46,7 @@ spec:
           - mountPath: /home/octoprint
             name: octoprint
             subPath: home
-          - mountPath: /opt/octoprint/venv/lib/python3.9/site-packages
+          - mountPath: /opt/octoprint/site-packages
             name: octoprint
             subPath: packages
           resources:
