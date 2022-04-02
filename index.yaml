@@ -113,4 +113,23 @@ entries:
     urls:
     - https://github.com/giacinti/helm-charts/releases/download/octoprint-0.1.0/octoprint-0.1.0.tgz
     version: 0.1.0
-generated: "2022-02-22T21:53:01.354847046Z"
+  traccar:
+  - apiVersion: v2
+    appVersion: "4.13"
+    created: "2022-04-02T19:51:19.133745139Z"
+    dependencies:
+    - condition: mysql.enabled
+      name: mysql
+      repository: https://charts.bitnami.com/bitnami
+      version: 8.6.2
+    description: A Helm chart for Traccar GPS Server
+    digest: c32ee1c09343749baae7c4df1da5baf94d21c37a17f9fef555a070f239ad0220
+    maintainers:
+    - email: laszlo.kondas@gmail.com
+      name: kondas
+    name: traccar
+    type: application
+    urls:
+    - https://github.com/giacinti/helm-charts/releases/download/traccar-1.0.0/traccar-1.0.0.tgz
+    version: 1.0.0
+generated: "2022-04-02T19:51:19.133764739Z"
